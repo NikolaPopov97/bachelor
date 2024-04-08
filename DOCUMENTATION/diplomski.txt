@@ -1,0 +1,29 @@
+Tuesday, October 17, 2023
+6:26 PM
+
+Sta su zvucni efekti detaljniji teoriski uvod, motivacija, opis efekata generalno (jedna strana)
+Druga glava algoritam (phaser algoritam) Prvo sa algoritmo pa onda matlab
+Matlab kod dodatno ako oces
+Kod C algoritmum ilustruj na primeru
+Sledeca glava implementacija u FPGA
+Implementacija u data path I control path
+Iskomentarisi ASMD 
+Nacrtati interfejs 
+Verifikacija
+	Testbenc, sta je implementirano
+	Vrsta testbenca stimilus generator bla bla 
+	Rezultati
+	Detaljnije sta se vidi na slikama
+	Matlab I vhdl model razlike
+	
+Kako je setapovan vivado
+Implementirani dizajn slika mozda pa to opisati
+Tekst u poslednjoj glavi opcije vivada sta je zadata ucestanost, ocekivanja
+Ocekivanja za potrosnju resursa, kolko se trosi DSP I BRAM I kolko je procenjeno 
+Ocekivane performanse
+
+Literatura 
+Referenca za phaser, web stranica, predavanja, barem 5. Reference iskoristiti u diplomskom. Koristi kao dodatnu informaciju I kao potvrdu tvrdnje. Reference da se ne pojavljuju 
+Kada se sve zavrsi prebaciti u  diplomski format
+Svako poglavlje na seledcoj stranici
+Pitati Vuka za kontakt
