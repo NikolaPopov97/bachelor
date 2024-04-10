@@ -11,7 +11,7 @@ info(fileReader);
 transformed_input = importdata('audio_input_cut.txt');
 
 %load  VHDL simulation output for sound check later
-simulation_output = importdata('text_io_output.txt');
+simulation_output = importdata('text_io_output_dec.txt');
 
 %Format audio samples so that they are horizontal vectors
 k = 0;
@@ -77,11 +77,14 @@ for i = 1 : length(y)
     output(i,1) = y(1,i);
 end
 
+%Matlab input output
+%deviceWriter(input_t);
+
 %Matlab simuation output
 deviceWriter(output);
 
 %Transformed input sound check
-deviceWriter(transformed_input);
+%deviceWriter(transformed_input);
 
 %VHDL simulation output
 deviceWriter(simulation_output);
