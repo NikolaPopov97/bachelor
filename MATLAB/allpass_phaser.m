@@ -15,6 +15,8 @@ transformed_input = importdata('audio_input_cut.txt');
 %load  VHDL simulation output for sound check later
 simulation_output = importdata('text_io_output_dec.txt');
 
+
+
 %Format audio samples so that they are horizontal vectors
 k = 0;
 while ~isDone(fileReader)
@@ -73,17 +75,13 @@ a = (tan(pi * lfo(j-1)/fileInfo.SampleRate) - 1)/(tan(pi * lfo(j-1)/fileInfo.Sam
 y(j) = a*x(j) + x(j-1) - a*y(j-1); %compute allpass filter output
 end
 
+
 %%%%%%%%%%%%% ADDER %%%%%%%%%%%%%
 
 %Add original input signal and filtered signal
 for i = 1 : length(y)
     y(1,i) = y(1,i) + input(1,i);
 end
-
-
-
-
-
 
 
 %%%%%%%%%%%%% OUTPUT FORMATING BLOCK %%%%%%%%%%%%%
@@ -96,20 +94,28 @@ end
 
 %Format output data for deviceWriter
 for i = 1 : length(y)
-    output(i,1) = y(1,i);
+    output(i,1) = y(1,i) / 2;
 end
+
+for i = 1 : length(simulation_output)
+    vhdl_output(i,1) = simulation_output(i,1) / 2;
+end
+
 
 %Matlab input output
 %deviceWriter(input_t);
+audiowrite('MatLab_original_input.wav', input_t, 44100);
 
 %Matlab simuation output
 %deviceWriter(output);
+audiowrite('MatLab_simulated_output.wav', output, 44100);
 
 %Transformed input sound check
 %deviceWriter(transformed_input);
 
 %VHDL simulation output
 %deviceWriter(simulation_output);
+audiowrite('VHDL_simulated_output.wav', vhdl_output, 44100);
 
 
 
